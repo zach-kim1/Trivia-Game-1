@@ -3,11 +3,14 @@ import React, { useState, useEffect } from "react";
 import QuestionForm from "./components/QuestionForm";
 var he = require('he');
 
+
+
 //import QuestionButtons from "./components/QuestionButtons";
 
 function App() {
   const [questions, setQuestions] = useState([]);
   const [counter,setCounter] =useState(0);
+
 
 
   useEffect(() => {
@@ -38,6 +41,7 @@ function App() {
     }, []);
 
 
+
 function editCounter(){
   setCounter(counter+1)
 }
@@ -45,6 +49,8 @@ function editCounter(){
 const questionList = questions.map((question) => (
   <QuestionForm
     name = {question.correct_answer}
+const questionList = questions.map((question) => (
+  <QuestionForm
     questionBody = {question.question}
     correct = {question.correct_answer}
     incorrect1 = {question.incorrect_answers[0]}
@@ -66,6 +72,13 @@ return (
   <div> {questionList}</div>
   <Button onClick = {useEffect}> New Questions</Button>
 
+
+  />
+)
+);
+return (
+  <div>
+      {questionList}
 
   </div>
   );
